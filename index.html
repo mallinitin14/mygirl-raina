@@ -1,85 +1,249 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1020;
+      --card: rgba(255,255,255,0.08);
+      --accent: #ff9acb;
+      --accent2: #9ad7ff;
+      --text: #f5f5f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #0f1020, #1b1d3a);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 600px;
+      opacity: 0.85;
+    }
+
+    .scroll-down {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    section {
+      padding: 4rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(var(--accent), var(--accent2));
+      transform: translateX(-50%);
+    }
+
+    .event {
+      display: flex;
+      margin: 2rem 0;
+      width: 100%;
+    }
+
+    .event.left { justify-content: flex-start; }
+    .event.right { justify-content: flex-end; }
+
+    .event-card {
+      width: 45%;
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      padding: 1.5rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .event-card h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .event-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    /* Links */
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .link-card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.4s ease, background 0.4s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .link-card a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      opacity: 0.7;
+      font-size: 0.85rem;
+    }
+
+    /* Animations on scroll */
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .timeline::before { left: 8px; }
+      .event { justify-content: flex-start !important; }
+      .event-card { width: 100%; margin-left: 1.5rem; }
+    }
+  </style>
+</head>
 <body>
 
+  <header>
+    <h1>Our Little Universe ✨</h1>
+    <p>Two months of talking. Countless memories. This is our story — one moment at a time.</p>
+    <div class="scroll-down">scroll ↓</div>
+  </header>
 
-<header>
-<h1>Our Little Universe ✨</h1>
-<p>Two months of talking. Countless memories. This is our story — one moment at a time.</p>
-<div class="scroll-down">scroll ↓</div>
-</header>
+  <section>
+    <h2 class="section-title">Our Timeline</h2>
+    <div class="timeline">
 
+      <div class="event left hidden">
+        <div class="event-card">
+          <h3>The First Day 💫</h3>
+          <p>The day everything started. A simple conversation that turned into something special.</p>
+          <img src="images/day1.jpg" alt="First day">
+        </div>
+      </div>
 
-<section>
-<h2 class="section-title">Our Timeline</h2>
-<div class="timeline">
+      <div class="event right hidden">
+        <div class="event-card">
+          <h3>Late Night Talks 🌙</h3>
+          <p>Laughing, opening up, and losing track of time together.</p>
+          <img src="images/latenight.jpg" alt="Late night talks">
+        </div>
+      </div>
 
+      <div class="event left hidden">
+        <div class="event-card">
+          <h3>Gaming Together 🎮</h3>
+          <p>From Roblox adventures to inside jokes that only we understand.</p>
+          <img src="images/gaming.jpg" alt="Gaming">
+        </div>
+      </div>
 
-<div class="event left hidden">
-<div class="event-card">
-<h3>The First Day 💫</h3>
-<p>The day everything started. A simple conversation that turned into something special.</p>
-<img src="images/day1.jpg" alt="First day">
-</div>
-</div>
+    </div>
+  </section>
 
+  <section>
+    <h2 class="section-title">Our Favorite Places</h2>
+    <div class="links">
+      <div class="link-card hidden">
+        <h3>Roblox</h3>
+        <p>Where we made some of our funniest memories.</p>
+        <a href="https://www.roblox.com" target="_blank">Visit →</a>
+      </div>
+      <div class="link-card hidden">
+        <h3>Our Playlist 🎧</h3>
+        <p>Songs that feel like us.</p>
+        <a href="#">Coming Soon</a>
+      </div>
+    </div>
+  </section>
 
-<div class="event right hidden">
-<div class="event-card">
-<h3>Late Night Talks 🌙</h3>
-<p>Laughing, opening up, and losing track of time together.</p>
-<img src="images/latenight.jpg" alt="Late night talks">
-</div>
-</div>
+  <footer>
+    Made with ❤️ just for you
+  </footer>
 
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
 
-<div class="event left hidden">
-<div class="event-card">
-<h3>Gaming Together 🎮</h3>
-<p>From Roblox adventures to inside jokes that only we understand.</p>
-<img src="images/gaming.jpg" alt="Gaming">
-</div>
-</div>
-
-
-</div>
-</section>
-
-
-<section>
-<h2 class="section-title">Our Favorite Places</h2>
-<div class="links">
-<div class="link-card hidden">
-<h3>Roblox</h3>
-<p>Where we made some of our funniest memories.</p>
-<a href="https://www.roblox.com" target="_blank">Visit →</a>
-</div>
-<div class="link-card hidden">
-<h3>Our Playlist 🎧</h3>
-<p>Songs that feel like us.</p>
-<a href="#">Coming Soon</a>
-</div>
-</div>
-</section>
-
-
-<footer>
-Made with ❤️ just for you
-</footer>
-
-
-<script>
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('show');
-}
-});
-}, { threshold: 0.15 });
-
-
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-</script>
-
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
