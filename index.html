@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<body>
+
+
+<header>
+<h1>Our Little Universe ✨</h1>
+<p>Two months of talking. Countless memories. This is our story — one moment at a time.</p>
+<div class="scroll-down">scroll ↓</div>
+</header>
+
+
+<section>
+<h2 class="section-title">Our Timeline</h2>
+<div class="timeline">
+
+
+<div class="event left hidden">
+<div class="event-card">
+<h3>The First Day 💫</h3>
+<p>The day everything started. A simple conversation that turned into something special.</p>
+<img src="images/day1.jpg" alt="First day">
+</div>
+</div>
+
+
+<div class="event right hidden">
+<div class="event-card">
+<h3>Late Night Talks 🌙</h3>
+<p>Laughing, opening up, and losing track of time together.</p>
+<img src="images/latenight.jpg" alt="Late night talks">
+</div>
+</div>
+
+
+<div class="event left hidden">
+<div class="event-card">
+<h3>Gaming Together 🎮</h3>
+<p>From Roblox adventures to inside jokes that only we understand.</p>
+<img src="images/gaming.jpg" alt="Gaming">
+</div>
+</div>
+
+
+</div>
+</section>
+
+
+<section>
+<h2 class="section-title">Our Favorite Places</h2>
+<div class="links">
+<div class="link-card hidden">
+<h3>Roblox</h3>
+<p>Where we made some of our funniest memories.</p>
+<a href="https://www.roblox.com" target="_blank">Visit →</a>
+</div>
+<div class="link-card hidden">
+<h3>Our Playlist 🎧</h3>
+<p>Songs that feel like us.</p>
+<a href="#">Coming Soon</a>
+</div>
+</div>
+</section>
+
+
+<footer>
+Made with ❤️ just for you
+</footer>
+
+
+<script>
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>
